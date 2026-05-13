@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\devtimes;
+use Illuminate\Support\Facades\DB;
+
 class devtimesSeeder extends Seeder
 {
     /**
@@ -12,18 +13,15 @@ class devtimesSeeder extends Seeder
      */
     public function run(): void
     {
-
-        dilution::create([
-        'DevTimeID'=>1,
-        'Dilution'=>1,
-        'agitDuration'=>10,
-        'agitInterval'=>60,
-        'ISO'=>1
-        'minutes'=>10,
-        'ISO'=>1
+        DB::table('devtimes')->insert([
+            'DevTimeID' => 1,
+            'Dilution' => 1,
+            'agitDuration' => 10,
+            'agitInterval' => 60,
+            'ISO' => 200,
+            'minutes' => 10,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
-
-
-
     }
 }

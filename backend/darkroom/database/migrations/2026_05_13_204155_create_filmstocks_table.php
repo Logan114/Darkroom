@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('filmstocks', function (Blueprint $table) {
             $table->id('stockID');
             $table->string('manufacturer');
-            $table->string('StockName');
-            $table->string('Format');
-            $table->integer('BoxISO');
+            $table->string('stock_name');
+            $table->integer('box_iso');
             $table->enum('format',
             ['35mm/135',
             '120',
@@ -24,8 +23,6 @@ return new class extends Migration
             '8x10']);
             $table->timestamps();
         });
-
-
     }
 
     /**

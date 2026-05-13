@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-usee App\Models\developer;
+use Illuminate\Support\Facades\DB;
+
 class developerSeeder extends Seeder
 {
     /**
@@ -12,10 +13,12 @@ class developerSeeder extends Seeder
      */
     public function run(): void
     {
-    developer::create([
-        'DevID'=>1,
-        'Brand' => 'Adox',
-        'name' => 'Rodinal',
+        DB::table('developers')->insert([
+            'DevID' => 1,
+            'Brand' => 'Adox',
+            'name' => 'Rodinal',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }

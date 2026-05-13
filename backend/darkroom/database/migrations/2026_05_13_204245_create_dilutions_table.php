@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('dilutions', function (Blueprint $table) {
             $table->id('DilutionID');
-            $table->foreign('Developer')->references('DevID')->on('developers')
-            ->constrained('developers')
-                    ->cascadeOnDelete();
+            $table->foreignId('Developer')->constrained('developers', 'DevID')->cascadeOnDelete();
             $table->string('dilution');
             $table->timestamps();
         });

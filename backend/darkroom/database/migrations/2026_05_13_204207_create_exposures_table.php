@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('exposures', function (Blueprint $table) {
             $table->id('expID');
-            $table->foreign('StockID')->references('stockID')->on('filmstocks')
-            ->constrained('filmstocks')
-                    ->cascadeOnDelete();
+            $table->foreignId('StockID')->constrained('filmstocks', 'stockID')->cascadeOnDelete();
             $table->integer('ISO');
-            $table->string('push')->default(0)
-            $table->
+            $table->string('push')->default('0');
             $table->timestamps();
         });
     }

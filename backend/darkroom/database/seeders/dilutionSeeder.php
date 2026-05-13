@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\dilution;
+use Illuminate\Support\Facades\DB;
+
 class dilutionSeeder extends Seeder
 {
     /**
@@ -12,21 +13,26 @@ class dilutionSeeder extends Seeder
      */
     public function run(): void
     {
-        dilution::create([
-        'DilutionID'=>1
-        'Developer'=>1
-        'dilution'=>'1+25'
+        DB::table('dilutions')->insert([
+            'DilutionID' => 1,
+            'Developer' => 1,
+            'dilution' => '1+25',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
-        dilution::create([
-        'DilutionID'=>2
-        'Developer'=>1
-        'dilution'=>'1+50'
+        DB::table('dilutions')->insert([
+            'DilutionID' => 2,
+            'Developer' => 1,
+            'dilution' => '1+50',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
-        dilution::create([
-        'DilutionID'=>3
-        'Developer'=>1
-        'dilution'=>'1+100'
+        DB::table('dilutions')->insert([
+            'DilutionID' => 3,
+            'Developer' => 1,
+            'dilution' => '1+100',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
-    
     }
 }
