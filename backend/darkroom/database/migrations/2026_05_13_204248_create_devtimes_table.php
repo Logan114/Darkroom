@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('devtimes', function (Blueprint $table) {
             $table->id('DevTimeID');
-            $table->foreign('DevDilution')->references('Dilution')->on('dilutions')
+            $table->foreign('Dilution')->references('DilutionID')->on('dilutions')
             ->constrained('dilutions')
                     ->cascadeOnDelete();
             $table->int('agitDuration');
             $table->int('agitInterval');
+             $table->foreign('ISO')->references('ExpID')->on('exposurees')
+            ->constrained('exposurees')
+                    ->cascadeOnDelete();
+            $table->integer('minutes')
             $table->timestamps();
         });
     }
