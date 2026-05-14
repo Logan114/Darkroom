@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('Dilution')->constrained('dilutions', 'DilutionID')->cascadeOnDelete();
             $table->integer('agitDuration');
             $table->integer('agitInterval');
-            $table->integer('ISO');
+            $table->foreignId('ISO')->constrained('exposures', 'expID')->cascadeOnDelete();
             $table->integer('minutes');
             $table->timestamps();
         });

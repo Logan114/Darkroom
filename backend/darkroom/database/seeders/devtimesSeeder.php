@@ -18,7 +18,7 @@ class devtimesSeeder extends Seeder
             'Dilution' => 1,
             'agitDuration' => 10,
             'agitInterval' => 60,
-            'ISO' => 200,
+            'ISO' => 1,
             'minutes' => 10,
             'created_at' => now(),
             'updated_at' => now(),
